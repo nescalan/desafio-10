@@ -44,7 +44,7 @@ Antes de comenzar, asegúrate de contar con lo siguiente:
 
 ### 3. Configuración del Repositorio Git
 
-1. Creé un repositorio en GitHub y subí la aplicación de ejemplo obtenida de [argocd-example-apps](https://github.com/argoproj/argocd-example-apps).
+1. Creé un repositorio en GitHub y subí la aplicación de ejemplo obtenida desde mi repositorio personal: [portafolio](https://github.com/nescalan/nelson-portfolio.git).
 2. Agregué el repositorio a ArgoCD utilizando el CLI:
    ```bash
    argocd repo add https://github.com/mi-usuario/mi-repo --username MI_USUARIO --password MI_PASSWORD
@@ -62,7 +62,7 @@ Antes de comenzar, asegúrate de contar con lo siguiente:
    spec:
      project: default
      source:
-       repoURL: "https://github.com/mi-usuario/mi-repo"
+       repoURL: "https://github.com/nescalan/nelson-portfolio.git"
        targetRevision: HEAD
        path: "path/de/mi/aplicacion"
      destination:
@@ -90,9 +90,10 @@ El siguiente diagrama ilustra el flujo de trabajo:
 1. **Repositorio Git**: Almacena la configuración declarativa de la aplicación.
 2. **ArgoCD**: Monitorea el repositorio y sincroniza los cambios en el clúster de Kubernetes.
 3. **Kubernetes**: Aloja y gestiona la aplicación desplegada.
+4. **Aplicacion**: Aplicación desplegada
 
 ```
-Git --> ArgoCD --> Kubernetes
+Git --> ArgoCD --> Kubernetes --> Aplicación
 ```
 
 ## Conclusión
